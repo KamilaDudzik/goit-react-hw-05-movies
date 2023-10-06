@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieReviews } from "services/api";
+import { Author } from "./Reviews.styled";
 
 export const Reviews = () => {
 
@@ -25,7 +26,7 @@ export const Reviews = () => {
         <ul>
             {reviews.map(review => (
                 <li key={review.id}>
-                    <p>Author: {review.author}</p>
+                    <Author>Author: {review.author}</Author>
                     <p>{review.content}</p>
                 </li>
             ))
