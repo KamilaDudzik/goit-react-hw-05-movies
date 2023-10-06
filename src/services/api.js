@@ -16,10 +16,10 @@ export const getTrending = async () => {
   return response.data.results;
 }
 
-export const getMovieReviews = async id => {
+export const getMovieReviews = async movieId => {
 
   const reviews = await axios.get(
-    `${API_URL}/movie/${id}/reviews`,
+    `${API_URL}/movie/${movieId}/reviews`,
     {
       params: {
         api_key: KEY
@@ -29,10 +29,10 @@ export const getMovieReviews = async id => {
   return reviews.data.results;
 }
 
-export const getMovieInfo = async id => {
+export const getMovieInfo = async movieId => {
 
   const movieDetails = await axios.get(
-    `${API_URL}/movie/${id}`,
+    `${API_URL}/movie/${movieId}`,
     {
       params: {
         api_key: KEY
@@ -42,10 +42,10 @@ export const getMovieInfo = async id => {
   return movieDetails.data;
 }
 
-export const getMoviesCast = async id => {
+export const getMoviesCast = async movieId => {
 
   const cast = await axios.get(
-    `${API_URL}/movie/${id}/credits`,
+    `${API_URL}/movie/${movieId}/credits`,
     {
       params: {
         api_key: KEY,
