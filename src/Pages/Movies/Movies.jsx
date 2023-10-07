@@ -4,7 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { searchMovies } from "services/api";
 import { FormStyled, Button, Input } from "./Movies.styled";
 
-export const Movies = () => {
+const Movies = () => {
 
     const [searchParams, setSearchParams] = useSearchParams()
     const [moviesList, setMoviesList] = useState([])
@@ -49,3 +49,4 @@ export const Movies = () => {
         </>
     )
 }
+export default Movies;

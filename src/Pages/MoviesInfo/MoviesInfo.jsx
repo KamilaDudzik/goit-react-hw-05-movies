@@ -4,7 +4,7 @@ import { useParams, Outlet, Link, useNavigate } from "react-router-dom";
 import { getMovieInfo } from "services/api";
 import { Wrapper, Paragraph, Button, MovieImage } from "./MoviesInfo.styled";
 
-export const MovieInfo = () => {
+const MovieInfo = () => {
 
     const { movieId } = useParams()
     const [movieInfo, setMovieInfo] = useState({})
@@ -66,3 +66,4 @@ export const MovieInfo = () => {
         </>
     )
 }
+export default MovieInfo;

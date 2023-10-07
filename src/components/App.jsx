@@ -7,10 +7,10 @@ import { Nav, Link } from "./App.styled";
 // import { Cast } from "./Cast/Cast";
 // import { Reviews } from "./Reviews/Reviews";
 
-const Movies = lazy(() => import('Pages/Movies/Movies'));
-const MovieInfo = lazy(() => import('Pages/MoviesInfo/MoviesInfo'));
-const Cast = lazy(() => import('Components/Cast/Cast'));
-const Reviews = lazy(() => import('Components/Reviews/Reviews'));
+const Movies = lazy(() => import('../Pages/Movies/Movies'));
+const MovieInfo = lazy(() => import('../Pages/MoviesInfo/MoviesInfo'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 export const App = () => {
   return (
