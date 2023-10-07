@@ -6,7 +6,7 @@ import { Wrapper, Paragraph, Button, MovieImage } from "./MoviesInfo.styled";
 
 export const MovieInfo = () => {
 
-    const { id } = useParams()
+    const { movieId } = useParams()
     const [movieInfo, setMovieInfo] = useState({})
     const [genres, setGenres] = useState([])
     let nav = useNavigate()
@@ -15,7 +15,7 @@ export const MovieInfo = () => {
 
         const asyncFunc = async () => {
             try {
-                const movieInfo = await getMovieInfo(id)
+                const movieInfo = await getMovieInfo(movieId)
                 setMovieInfo(movieInfo)
                 setGenres(movieInfo.genres)
 
@@ -24,7 +24,7 @@ export const MovieInfo = () => {
             }
         }
         asyncFunc()
-    }, [id])
+    }, [movieId])
 
     return (
         <>

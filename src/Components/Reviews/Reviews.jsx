@@ -6,21 +6,22 @@ import { Author } from "./Reviews.styled";
 
 export const Reviews = () => {
 
-    const { id } = useParams()
+    const { movieId } = useParams()
     const [reviews, setReviews] = useState([])
-    const [error, setError] = useState(null)
+    // const [, setError] = useState(null)
 
     useEffect(() => {
 
         const asyncFunc = async () => {
             try {
-                setReviews(await getMovieReviews(id))
+                setReviews(await getMovieReviews(movieId))
             } catch (error) {
-                setError(error)
+                // setError(error)
+                console.log(error)
             } 
         }
         asyncFunc()
-    }, [id])
+    }, [movieId])
 
     return (
         <ul>

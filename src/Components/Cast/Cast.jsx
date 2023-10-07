@@ -6,20 +6,21 @@ import { getMoviesCast } from "services/api";
 export const Cast = () => {
 
     const [cast, setCast] = useState([])
-    const { id } = useParams()
-    const [error, setError] = useState(null)
+    const { movieId } = useParams()
+    // const [error, setError] = useState(null)
 
     useEffect(() => {
 
         const asyncFunc = async () => {
             try {
-                setCast(await getMoviesCast(id))
-            } catch {
-                setError(error)
+                setCast(await getMoviesCast(movieId))
+            } catch (error) {
+              // setError(error)
+              console.log(error)
             } 
         }
         asyncFunc()
-    }, [id])
+    }, [movieId])
 
   return (
     <ul>
