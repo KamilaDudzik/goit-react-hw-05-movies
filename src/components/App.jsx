@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "Pages/Home/Home";
 import { Movies } from "Pages/Movies/Movies";
 import { MovieInfo } from "Pages/MoviesInfo/MoviesInfo";
@@ -9,20 +9,21 @@ import { Nav, Link } from "./App.styled";
 
 export const App = () => {
   return (
-    <>
-      <Nav>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
-      </Nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieInfo />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-        
-      </Routes>
-    </>
-  )
+    <Router>
+      <div>
+        <Nav>
+          <Link to="/">Home</Link>
+          <Link to="/movies">Movies</Link>
+        </Nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieInfo />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
+  );
 }
