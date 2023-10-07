@@ -12,7 +12,7 @@ const MovieInfo = lazy(() => import('../Pages/MoviesInfo/MoviesInfo'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
-export const App = () => {
+const App = () => {
   return (
     <>
         <Nav>
@@ -32,3 +32,4 @@ export const App = () => {
     </>
   )
 }
+export default App;
