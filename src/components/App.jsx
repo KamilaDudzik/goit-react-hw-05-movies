@@ -1,12 +1,11 @@
-import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 import { Home } from "Pages/Home/Home";
+import { Nav, Link } from "./App.styled";
 // import { Movies } from "Pages/Movies/Movies";
 // import { MovieInfo } from "Pages/MoviesInfo/MoviesInfo";
 // import { Cast } from "./Cast/Cast";
 // import { Reviews } from "./Reviews/Reviews";
-
-import { Nav, Link } from "./App.styled";
 
 const Movies = lazy(() => import('Pages/Movies/Movies'));
 const MovieInfo = lazy(() => import('Pages/MoviesInfo/MoviesInfo'));
