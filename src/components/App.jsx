@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Router, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { Home } from "Pages/Home/Home";
 import { Movies } from "Pages/Movies/Movies";
 import { MovieInfo } from "Pages/MoviesInfo/MoviesInfo";
@@ -9,8 +10,7 @@ import { Nav, Link } from "./App.styled";
 
 export const App = () => {
   return (
-    <Router>
-      <div>
+  <>
         <Nav>
           <Link to="/">Home</Link>
           <Link to="/movies">Movies</Link>
@@ -22,8 +22,7 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-        </Routes>
-      </div>
-    </Router>
+      </Routes>
+    </>
   );
 }
