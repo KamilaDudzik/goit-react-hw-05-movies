@@ -25,13 +25,18 @@ const Reviews = () => {
 
     return (
         <ul>
-            {reviews.map(review => (
-                <li key={review.id}>
-                    <Author>Author: {review.author}</Author>
-                    <p>{review.content}</p>
+            {reviews.length === 0 ? (
+                <li style={{ listStyle: "none" }}>
+                    We don't have any reviews for this movie
                 </li>
-            ))
-            }
+            ) : (
+                    reviews.map(review => (
+                        <li key={review.id}>
+                            <Author>Author: {review.author}</Author>
+                            <p>{review.content}</p>
+                        </li>
+                    ))
+            )}
         </ul>
     )
 }

@@ -24,7 +24,12 @@ const Cast = () => {
 
   return (
     <ul>
-      {cast.map(castMember => (
+      {cast.length === 0 ? (
+        <li style={{ listStyle: 'none' }}>
+          We don't have cast information for this movie
+        </li>
+      ) : (
+        cast.map(castMember => (
           <li key={castMember.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500${castMember.profile_path}`}
@@ -34,7 +39,7 @@ const Cast = () => {
             <p>{castMember.name}</p>
             <p>Character: {castMember.character}</p>
           </li>
-        )
+        ))
       )}
     </ul>
   )
